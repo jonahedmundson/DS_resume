@@ -1,0 +1,266 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry} %Sets proper 1-inch margins. 
+\usepackage{amsmath} %Only load this if you are using math/equations.
+\usepackage{graphicx} %Only need to call this if inserting images.
+\usepackage{caption} %Only need to call this if inserting captions.
+\usepackage{float} %Allows the use of the [H] specifier. 
+%\graphicspath{{C:/Users/jonah/Pictures/meme/}} %Sets the working directory for images.
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref} %Allows for the embedding of urls. 
+\usepackage{setspace}
+\usepackage{blindtext}
+
+%\pagenumbering{arabic}
+
+%\usepackage{fontspec} %%in order for this font stuff to work, you must compile using xelatex+makeindex+bibtex (or at minimum xelatex)
+%\setmainfont[Mapping=tex-text-ms]{Essays1743}
+
+\usepackage{fancyhdr}
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{Jonah Edmundson \par DATE 20XX}
+%\lhead{\thepage}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc, positioning}
+
+%https://tex.stackexchange.com/questions/22406/how-to-make-a-textbox-with-this-tikz-code
+\xdefinecolor{mycolor}{RGB}{62,96,111} % Neutral Blue
+\colorlet{bancolor}{mycolor}
+
+\def\bancolor{mycolor}
+\newenvironment{mybox}[3][]{%
+    \begin{tikzpicture}[#1]%
+        \def\myboxname{#3}%
+        \node [draw,inner sep=1.5ex,text width=#2]% good options: minimum height, minimum width
+            (BOXCONTENT) \bgroup\rule{0pt}{3ex}\ignorespaces
+}{%
+        \egroup;
+        \node [right,inner xsep=1em,fill=bancolor!75,outer sep=0pt,text height=2ex,text depth=.5ex] (BOXNAME) 
+            at ([shift={(-1em,0pt)}]BOXCONTENT.north west) {\myboxname};
+%        \fill[bancolor] (BOXNAME.north east) -- +(-1em,1em) -- +(-1em,0) -- cycle;
+        \fill[bancolor] (BOXNAME.south west) -- +(1em,-1em) -- +(1em,0) -- cycle;
+    \end{tikzpicture}
+}
+
+
+
+
+\newcommand{\comment}[1]{}
+
+\usepackage{color}
+\definecolor{silver}{RGB}{35,43,43}
+\pagecolor{silver}
+\color{white}
+
+%fonts
+\usepackage{fontspec}
+%\setmainfont{Gotham Book}
+\setmainfont{Gotham Book}[
+  Path = ./Gotham-Font/ ,
+  Extension       =  .ttf ,
+  UprightFont     =  GothamBook    ,
+  ItalicFont      =  GothamBookItalic ,
+  BoldFont        =  GothamBold    , 
+  BoldItalicFont  =  GothamBoldItalic ,
+]
+
+\begin{document}
+
+\noindent
+\begin{minipage}{0.6\textwidth}
+\noindent {\fontsize{32}{10}\selectfont \textbf{Jonah Edmundson}}
+\normalsize
+\par
+\vspace{0.2pc}
+\hspace{18.4pc}
+\textit{Data Scientist}
+\end{minipage}\hfill
+\hspace{2pc}\begin{minipage}{0.4\textwidth}
+\begin{flushright}
+\noindent \url{jonahedmundson@gmail.com}
+\par
+\noindent \url{www.jonahedmundson.xyz}
+\par
+\noindent \url{https://github.com/jonahedmundson}
+\end{flushright}
+\end{minipage}
+
+
+
+\normalsize
+\noindent
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.6\textwidth}
+\noindent
+\vspace{0pt}
+
+\par
+
+\vspace{0pc}
+
+\par
+
+\phantom{4pt} \\
+
+\par
+
+Hello!
+
+\par
+
+\phantom{4pt} \\
+
+\par
+
+\begin{mybox}{\textwidth}{Education}
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content
+\end{mybox}	
+
+\par
+
+\phantom{4pt} \\
+
+\par
+
+\begin{mybox}{\textwidth}{Skills}
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content
+\end{mybox}	
+
+\par
+
+\phantom{4pt} \\
+
+\par
+
+\begin{mybox}{\textwidth}{Projects}
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content
+\end{mybox}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{minipage}\hfill
+\hspace{2pc}\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}
+\noindent 
+
+\vspace{5pc}
+
+\begin{tikzpicture}
+
+	%moves whole pic slightly right
+	\node [] (Z) at (-2.5,0){};
+
+	\node [draw, rounded rectangle] (title) at (0.2, 0){\LARGE Timeline}; 
+
+%vertical line
+	\coordinate [] (A) at (0,-11.5){};
+	\coordinate [label={[align=right, label distance=-2cm]00:\textit{Summer}\\\textit{2023}}] (B) at (0,-10.5){};
+	\coordinate [] (C) at (0,-9.5){};
+	\coordinate [label={[align=right, label distance=-1.5cm]00:\textit{2023}}] (D) at (0,-8.5){};
+	\coordinate [] (E) at (0,-1){};
+	\coordinate [label={[align=right, label distance=-1.5cm]00:\textit{2022}}] (F) at (0,-6.5){};
+	\coordinate [] (G) at (0,-5.5){};
+	\coordinate [] (H) at (0,-4.5){};
+    \coordinate [] (I) at (0,-3.5) {};
+    \coordinate [label={[align=right, label distance=-1.4cm]00:\textit{2018}}] (J) at (0,-2.5) {};
+    \coordinate [] (K) at (0,-1.5) {};
+    
+    \draw [white, very thick,<->,>=stealth] (A) -- (K);
+    \filldraw[color=white, very thick](B) circle (0.1);
+    \filldraw[color=white, very thick](J) circle (0.1);
+    %\filldraw[color=white, very thick](H) circle (0.1);
+    %\filldraw[color=white, very thick](K) circle (0.1);
+    \filldraw[color=white, very thick](F) circle (0.1);
+    \filldraw[color=white, very thick](D) circle (0.1);
+    
+%aux lines
+    \coordinate [label={[align=left, label distance=0.2cm]00:High School\\Graduation}] (AF) at (0.15,-1.85){};
+    %
+    \coordinate [] (AA) at (0.3,-2.5){};
+    \coordinate [] (AB) at (0.5,-2.5){};
+    \coordinate [] (AC) at (0.5,-4.5){};
+    \coordinate [] (AD) at (0.3,-6.4){};
+    \coordinate [] (AE) at (0.5,-6.4){};
+    \coordinate [label={[align=left, label distance=0.2cm]00:BSc\\Biology}] (AF) at (0.7,-4.5){};
+	\draw [white, thick] (AA) -- (AB);
+	\draw [white, thick] (AB) -- (AE);
+	\draw [white, thick] (AD) -- (AE);
+	\draw [white, thick] (AC) -- (AF);
+	%
+	\coordinate [] (AG) at (0.3,-6.6){};
+    \coordinate [] (AH) at (0.5,-6.6){};
+    \coordinate [] (AI) at (0.5,-7.5){};
+    \coordinate [] (AJ) at (0.3,-8.5){};
+    \coordinate [] (AK) at (0.5,-8.5){};
+    \coordinate [label={[align=left, label distance=0.2cm]00:Master's of\\Data Science}] (AL) at (0.7,-7.5){};
+	\draw [white, thick] (AG) -- (AH);
+	\draw [white, thick] (AH) -- (AK);
+	\draw [white, thick] (AJ) -- (AK);
+	\draw [white, thick] (AI) -- (AL);
+	%
+	\coordinate [label={[align=center, label distance=0.2cm]00:\large\textbf{Working}\\\large\textbf{with you!}}] (AX) at (0.2,-10.5){};
+	
+
+\end{tikzpicture}
+
+
+\end{minipage} 
+
+\end{figure}
+
+
+
+\begin{figure}[H]
+\begin{minipage}{0.9\textwidth}
+
+
+
+
+\par
+
+\phantom{0pt} \\
+
+\par
+
+\begin{mybox}{\textwidth}{Awards}
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content \\
+    This is the longer content
+\end{mybox}	
+
+
+
+
+
+\end{minipage}
+\end{figure}
+
+
+\end{document}
