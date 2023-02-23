@@ -1,26 +1,29 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.5in]{geometry} %Sets proper 1-inch margins. 
-\usepackage{amsmath} %Only load this if you are using math/equations.
+\usepackage[top=0.1in, left=0.5in, bottom=0.5in, right=0.5in]{geometry} 
+%\addtolength{\topmargin}{-0.4in}
+%\usepackage{amsmath} %Only load this if you are using math/equations.
 \usepackage{graphicx} %Only need to call this if inserting images.
 \usepackage{caption} %Only need to call this if inserting captions.
-\usepackage{float} %Allows the use of the [H] specifier. 
-%\graphicspath{{C:/Users/jonah/Pictures/meme/}} %Sets the working directory for images.
-\usepackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref} %Allows for the embedding of urls. 
+\usepackage{float} %Allows the use of the [H] specifier.
 \usepackage{setspace}
 \usepackage{blindtext}
 
 %\pagenumbering{arabic}
+%\thispagestyle{empty}
 
 %\usepackage{fontspec} %%in order for this font stuff to work, you must compile using xelatex+makeindex+bibtex (or at minimum xelatex)
 %\setmainfont[Mapping=tex-text-ms]{Essays1743}
 
 \usepackage{fancyhdr}
 
-%\pagestyle{fancy}
-%\fancyhf{}
-%\rhead{Jonah Edmundson \par DATE 20XX}
-%\lhead{\thepage}
+\pagestyle{fancy}
+\fancyhf{}
+ \renewcommand{\headrulewidth}{0pt} 
+\rhead{}
+\lhead{}
+\cfoot{References available upon request.}
+
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.misc, positioning}
@@ -54,6 +57,13 @@
 \pagecolor{silver}
 \color{white}
 
+\xdefinecolor{mycolor2}{RGB}{255, 160, 0}
+\colorlet{orange1}{mycolor2}
+%\definecolor{orange1}{RGB}{255, 160, 0} 
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=orange1]{hyperref} %Allows for the embedding of urls. 
+\hypersetup{pdflinkmargin=0.8pc}
+
+
 %fonts
 \usepackage{fontspec}
 %\setmainfont{Gotham Book}
@@ -65,6 +75,15 @@
   BoldFont        =  GothamBold    , 
   BoldItalicFont  =  GothamBoldItalic ,
 ]
+
+
+
+
+
+
+
+
+
 
 \begin{document}
 
@@ -79,11 +98,24 @@
 \end{minipage}\hfill
 \hspace{2pc}\begin{minipage}{0.4\textwidth}
 \begin{flushright}
-\noindent \url{jonahedmundson@gmail.com}
+\footnotesize
+\noindent Email: \par
+\noindent \href{mailto:jonahedmundson@gmail.com}{\url{jonahedmundson@gmail.com}}
 \par
-\noindent \url{www.jonahedmundson.xyz}
+%\vspace{0.75pc}
 \par
-\noindent \url{https://github.com/jonahedmundson}
+\noindent Website: \par
+\noindent \href{www.jonahedmundson.xyz}{\url{www.jonahedmundson.xyz}}
+\par
+%\vspace{0.75pc}
+\par
+\noindent LinkedIn: \par
+\noindent \href{https://www.linkedin.com/in/jonah-edmundson-109151258/}{\url{linkedin.com/in/jonah-edmundson-109151258/}}
+\par
+\noindent GitHub: \par
+\noindent \href{https://github.com/jonahedmundson}{\url{github.com/jonahedmundson}}
+
+%\url{https://github.com/jonahedmundson}
 \end{flushright}
 \end{minipage}
 
@@ -93,28 +125,21 @@
 \noindent
 
 \begin{figure}[H]
-\begin{minipage}[t]{0.6\textwidth}
+\begin{minipage}[t]{0.7\textwidth}
 \noindent
 \vspace{0pt}
 
 \par
 
-\vspace{0pc}
+\vspace{1pc}
 
+Hello! 
 \par
+I am a graduating data science student looking to break into the tech industry. I hope that my resume properly communicates my enthusiasm for this exciting field. \\
 
-\phantom{4pt} \\
+\vspace{1pc}
 
-\par
-
-Hello!
-
-\par
-
-\phantom{4pt} \\
-
-\par
-
+\comment{
 \begin{mybox}{\textwidth}{Education}
     This is the longer content \\
     This is the longer content \\
@@ -122,39 +147,86 @@ Hello!
     This is the longer content \\
     This is the longer content
 \end{mybox}	
+}
+
+
+\textbf{\large{EDUCATION}}
+\par\noindent\rule{\textwidth}{1.0pt}
+\par
+\vspace{0.5pc}
+
+%\begin{flushleft}
+
+
+\noindent\textit{Master's of Data Science} \\
+\hspace{1pc} University of British Columbia Okanagan, Kelowna, BC \\
+\hspace{1pc} Expected Graduation: Summer 2023 \\
+
+\vspace{0.5pc}
+
+\noindent\textit{Bachelor of Science}, 2022 \hfill GPA: 4.00 \\
+\hspace{1pc} The King’s University, Edmonton, AB \\
+\hspace{1pc} General Biology \\
+\hspace{1pc} Minor in Philosophy
+
+%\end{flushleft}
 
 \par
 
-\phantom{4pt} \\
+\phantom{3pt} \\
 
 \par
 
-\begin{mybox}{\textwidth}{Skills}
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content
-\end{mybox}	
+\textbf{\large{PROJECTS}} \hfill (clickable)
+\par\noindent\rule{\textwidth}{1.0pt}
+\par
+\vspace{0.5pc}
+%sideproject
+%497
+%dashboard
+%pyquizlet?
+
+\textit{\href{https://www.jonahedmundson.xyz/edmundson\_finalsubmission.pdf}{BIOL497 Senior Thesis} \hfill 2022} \\ 
+Analyzing the flow of substance misuse patients through the emergency department using a multi-state modelling approach.
+
+\vspace{1.5pc}
+
+\textit{\href{https://github.com/jonahedmundson/kelowna\_weathercrash}{Kelowna Weather-Crash} \hfill 2023} \\
+A statistical investigation into the relationship between local weather trends and vehicle accidents in the city of Kelowna. 
+
+\vspace{1.5pc}
+
+\textit{\href{https://github.com/jonahedmundson/VGsalesDashboard\_R}{Video Games Dashboard} \hfill 2023} \\
+A dashboard for video game sales using ggplot2 and R Dash. 
+
+\vspace{1.5pc}
+
+\textit{\href{https://github.com/jonahedmundson/py\_quizlet\_cram}{Py Quizlet Kahoot} \hfill 2022} \\
+A package for taking Quizlet and Kahoot quizzes in Python. Quizzes are webscraped in real time.
+
+
+
 
 \par
 
-\phantom{4pt} \\
+\phantom{3pt} \\
 
 \par
 
-\begin{mybox}{\textwidth}{Projects}
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content \\
-    This is the longer content
-\end{mybox}	
+\textbf{\large{VOLUNTEERING}}
+\par\noindent\rule{\textwidth}{1.0pt}
+\par
+\vspace{0.5pc}
 
+\textit{The King’s Ambassadors \hfill 2018 - 2022}
+\par
+A volunteer group designed to represent the university and help with school-related events.
 
+\vspace{1.5pc}
 
-
-
+\textit{Kelowna Gospel Mission \hfill 2022 - Current}
+\par
+Helping prepare and serve food. Weekly. 
 
 
 
@@ -173,7 +245,7 @@ Hello!
 \begin{tikzpicture}
 
 	%moves whole pic slightly right
-	\node [] (Z) at (-2.5,0){};
+	%\node [] (Z) at (-2.5,0){};
 
 	\node [draw, rounded rectangle] (title) at (0.2, 0){\LARGE Timeline}; 
 
@@ -228,13 +300,31 @@ Hello!
 
 \end{tikzpicture}
 
+\vspace{2pc}
+
+
+\begin{tikzpicture}
+
+	%moves whole pic slightly right
+	%\node [] (Z) at (-2.5,0){};
+	\node [] (Z) at (0,0){};
+
+	\node [draw, rounded rectangle] (title) at (2.2, 0){\LARGE Skills}; 
+	
+\end{tikzpicture}
+
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./figures/skill_figure.png}
+\end{center}
+
 
 \end{minipage} 
 
 \end{figure}
 
 
-
+\comment{
 \begin{figure}[H]
 \begin{minipage}{0.9\textwidth}
 
@@ -247,6 +337,7 @@ Hello!
 
 \par
 
+\comment{
 \begin{mybox}{\textwidth}{Awards}
     This is the longer content \\
     This is the longer content \\
@@ -254,6 +345,12 @@ Hello!
     This is the longer content \\
     This is the longer content
 \end{mybox}	
+}
+
+
+
+
+
 
 
 
@@ -261,6 +358,6 @@ Hello!
 
 \end{minipage}
 \end{figure}
-
+} %end of long comment
 
 \end{document}
